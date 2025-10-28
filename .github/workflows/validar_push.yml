@@ -1,4 +1,4 @@
-#prueba rama-mala
+#prueba rama-mala prueba 2
 name: Validador de Nombre de Rama
 on:
   push:
