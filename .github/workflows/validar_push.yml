@@ -1,0 +1,28 @@
+#prueba rama-mala
+name: Validador de Nombre de Rama
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+jobs:
+  validar:
+    name: Validar Convención de Nombres
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Mostrar nombre de la rama
+        run: echo "Rama detectada: ${{ github.ref_name }}"
+
+      - name: Validar prefijo permitido
+        run: |
+          echo "Verificando convención de nombre..."
+          BRANCH="${{ github.ref_name }}"
+          
+          if [[ "$BRANCH" =~ ^(feature|bugfix|hotfix)/.+$ ]]; then
+            echo "Nombre de rama válido: $BRANCH"
+          else
+            echo "Error: El nombre de la rama '$BRANCH' no cumple la convención."
+            echo "Usa alguno de los siguientes prefijos: feature/, bugfix/, hotfix/"
+            exit 1
+          fi
