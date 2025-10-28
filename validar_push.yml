@@ -1,12 +1,9 @@
 name: Validador de Nombre de Rama
-
-
 on:
   push:
     branches-ignore:
       - main
       - master
-
 jobs:
   validar:
     name: Validar Convención de Nombres
