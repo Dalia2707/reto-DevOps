@@ -1,4 +1,4 @@
-#prueba rama feature
+#prueba rama feature segundo intento
 name: Validador de Nombre de Rama
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
           echo "Verificando convención de nombre..."
           BRANCH="${{ github.ref_name }}"
           
-          if [[ "$BRANCH" =~ ^(feature|bugfix|hotfix)/.+$ ]]; then
+          iif [[ "${{ github.ref_name }}" =~ ^(feature|bugfix|hotfix)/[a-zA-Z0-9._-]+$ ]]; then
             echo "Nombre de rama válido: $BRANCH"
           else
             echo "Error: El nombre de la rama '$BRANCH' no cumple la convención."
