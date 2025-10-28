@@ -1,4 +1,4 @@
-#prueba rama-mala
+#prueba rama feature
 name: Validador de Nombre de Rama
 on:
   push:
