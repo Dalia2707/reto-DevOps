@@ -9,11 +9,9 @@ jobs:
   validar:
     name: Validar Convención de Nombres
     runs-on: ubuntu-latest 
-
     steps:
       - name: Mostrar nombre de la rama
-        run: echo "Rama detectada: ${{ github.ref_name }}"
-
+        run: echo "Rama detectada ${{ github.ref_name }}"
       - name: Validar prefijo permitido
         run: |
           echo "Verificando convención de nombre..."
